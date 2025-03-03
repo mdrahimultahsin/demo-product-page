@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Page</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    <section class="w-full min-h-screen flex justify-center items-center py-4">
+        <div class="max-w-4xl mt-10 lg:flex gap-6 px-5">
+            <div class="bg-gray-200 flex justify-center items-center">
+                <img id="product-img" class="w-full" src="brown.png" alt="">
+            </div>
+            <div class="py-4 px-2 space-y-2">
+                <h1 class="font-semibold text-2xl">Dr. Mauch Men's Sandal</h1>
+                <div class="space-x-2 text-sm font-medium text-gray-500">
+                    <span>SKU: 92625A95</span>
+                    <span>Style: Sandal</span>
+                </div>
+                <div class="flex gap-4">
+                    <p class="text-2xl text-gray-500 line-through">৳ 2490</p>
+                    <p class="text-2xl font-semibold">৳ 2,116</p>
+                </div>
+                <div class="flex gap-4 mt-5">
+                    <img id="brown-color" class="color-btn cursor-pointer w-18 border border-gray-300" src="d508d7b3-5be2-4022-b4a6-3d3dbe514815.jpg" alt="">
+                    <img id="black-color" class="color-btn cursor-pointer w-18 border border-gray-300" src="8ad3b662-dea1-4a46-9a0d-aaeecba3d475.jpg" alt="">
+                </div>
+                <div>
+                    <h3 class="font-semibold text-lg">Sizes:</h3>
+                    <!-- Size Container -->
+                    <div class="flex gap-4 mt-3">
+                        <div id="size-39" class="cursor-pointer size py-2 px-5 border border-gray-400 font-medium">
+                            39
+                        </div>
+                        <div id="size-40" class="cursor-pointer size py-2 px-5  border border-gray-400 font-medium">
+                            40
+                        </div>
+                        <div id="size-41" class="cursor-pointer size py-2 px-5  border border-gray-400 font-medium">
+                            41
+                        </div>
+                        <div id="size-42" class="cursor-pointer size py-2 px-5  border border-gray-400 font-medium">
+                            42
+                        </div>
+                        <div id="size-43" class="cursor-pointer size py-2 px-5 border border-gray-400 font-medium">
+                            43
+                        </div>
+                    </div>
+                    <!-- Quantity Area -->
+                     <div class="flex items-center mt-6 gap-4 ">
+                        <h2 class="font-semibold text-lg">Quantity :</h2>
+                        <div class="flex items-center gap-6 bg-gray-200 px-6 font-semibold text-2xl border border-gray-400 rounded-xl">
+                            <button onclick="quantity('-')" class="cursor-pointer py-3">-</button>
+                            <span id="quantity-value" class="text-2xl font-semibold">0</span>
+                            <button onclick="quantity('+')" class="cursor-pointer py-3">+</button>
+                        </div>
+                     </div>
+                     <div class="mt-4 flex gap-4 items-center">
+                        <button id="buy-now-btn" class="cursor-pointer bg-black text-white px-3 py-2 rounded-xl text-lg">Buy Now</button>
+                        <button id="add-to-cart-btn" class="cursor-pointer border border-gray-400 px-3 py-2 rounded-xl text-lg font-semibold">Add To Cart</button>
+                     </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal for Cart Preview -->
+    <div
+    id="cart-modal"
+    class="fixed inset-0 bg-gray-500 bg-opacity-75 hidden flex justify-center items-center z-50 "
+  >
+    <div class="bg-white p-6 rounded-lg shadow-lg w-96 md:w-2/3 lg:w-1/2">
+      <h2 class="text-xl font-bold text-gray-800">Your Cart</h2>
+
+      <!-- Cart Items Table -->
+      <div class="overflow-x-auto mt-4">
+        <table class="min-w-full table-auto">
+          <thead>
+            <tr class="text-left border-b">
+              <th class="py-2 px-4">Item</th>
+              <th class="py-2 px-4">Color</th>
+              <th class="py-2 px-4">Size</th>
+              <th class="py-2 px-4">Quantity</th>
+              <th class="py-2 px-4">Price</th>
+            </tr>
+          </thead>
+          <tbody id="cart-items">
+            <!-- Cart items will go here dynamically -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Buttons -->
+      <div class="flex justify-end gap-2 mt-4">
+        <button
+          id="continue-shopping"
+          class="px-6 py-2 bg-gray-300 text-gray-800 rounded-lg hover:bg-gray-400"
+        >
+          Continue Shopping
+        </button>
+        <button
+          class="px-6 py-2 bg-black text-white rounded-lg hover:bg-purple-700"
+          id="checkout"
+        >
+          Checkout
+        </button>
+      </div>
+    </div>
+  </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
